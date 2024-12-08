@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leafistry-Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand bodoni-moda-logo" href="#">Leafistry</a>
+
+        <button
+          class="menu-btn d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'discover' %}">Discover</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'library' %}">Library</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="shop-container">
+      <h1>Shop Our Collection</h1>
+      <p>"Transform Your Space with Nature's Charm.</p>
+      <p>Find the Perfect Plant for Every Corner!"</p>
+      <div class="search-bar-container">
+        <input
+          type="text"
+          id="search-bar"
+          placeholder="Search plants..."
+          onkeyup="filterPlants()" />
+        <i class="bi bi-search search-icon"></i>
+      </div>
+      <div class="shop-cards-grid" id="shop-cards-grid">
+        {% for plant in plants %}
+        <div class="shop-card">
+          <a href="{% url 'product_details' plant.id %}">
+            <img
+              src="{% static plant.image_path %}"
+              alt="{{ plant.common_name }}" />
+          </a>
+          <div class="shop-card-content">
+            <h3 class="shop-card-title">{{ plant.common_name }}</h3>
+            <p class="shop-card-price">${{ plant.inventory.first.price }}</p>
+
+            <div class="card-buttons">
+              <form action="{% url 'cart' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="plant_id" value="{{ plant.id }}" />
+                <button class="button button-apple-phthalo shop-card-button">
+                  Buy
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <script>
+      function filterPlants() {
+        const query = document.getElementById("search-bar").value.toLowerCase();
+        const cards = document.querySelectorAll(".shop-card");
+
+        cards.forEach((card) => {
+          const title = card
+            .querySelector(".shop-card-title")
+            .textContent.toLowerCase();
+          if (title.includes(query)) {
+            card.style.display = "block"; // Show matching cards
+          } else {
+            card.style.display = "none"; // Hide non-matching cards
+          }
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

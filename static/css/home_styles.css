@@ -1,0 +1,571 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --phthalo-green: #0b2b26;
+  --phthalo-green-light: #163832;
+  --phthalo-green-dark: #051f20;
+  --apple-green: #88b836;
+  --apple-green-light: #b3d66b;
+  --apple-green-lighter: #d7eaa0; 
+  --milk: #fffdf5;
+  --black: #040406;
+  --red: #ff4d4d;
+  --shadow: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--black);
+  font-family: "Inter Tight", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: "Inter Tight", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--phthalo-green);
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: "Inter Tight", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 15px;
+  color: var(--phthalo-green);
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-family: "Inter Tight", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--phthalo-green);
+}
+
+.bodoni-moda-logo {
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.link-apple-green {
+  color: var(--apple-green);
+  padding: 5px 0px;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.link-apple-green:hover {
+  transform: scale(1.05);
+}
+
+.navbar {
+  background-color: transparent;
+  padding: 1rem 0.5rem;
+  margin-top: 0px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.navbar-brand {
+  color: var(--black) !important;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: var(--black) !important;
+  transition: opacity 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+}
+
+.nav-link:hover {
+  opacity: 0.9;
+  transform: scale(1.025);
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: var(--black);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-btn:focus {
+  outline: none;
+}
+
+.menu-btn:hover {
+  transform: scale(1.1);
+}
+
+
+/* Buttons */
+.button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button-primary {
+  background-color: var(--apple-green);
+  color: white;
+  border: none;
+}
+
+.button-secondary {
+  background-color: var(--phthalo-green);
+  color: white;
+  border: none;
+}
+
+.button-outline {
+  background: none;
+  color: var(--phthalo-green);
+  border: 2px solid var(--phthalo-green);
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  background-image: url("../images/home_page.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 89vh;
+}
+
+.hero .text-content {
+  max-width: 60%;
+  padding: 0px 30px;
+}
+
+.hero .text-content h1 {
+  font-size: 5rem; 
+  margin-bottom: 20px;
+  text-align: left;
+  color: var(--phthalo-green-dark)
+}
+
+.hero .text-content p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+} 
+
+.link-white {
+  color: var(--milk); 
+  border-radius: 4px;
+  font-weight: 300;
+  transition: all 0.2s ease;
+  font-size: 20px;
+}
+
+.link-white:hover {
+  transform: translateY(-2px);
+}
+
+.button {
+  border: 2px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.button-phthalo-outline {
+  background-color: var(--milk);
+  color: var(--phthalo-green);
+  border-color: var(--phthalo-green);
+  border-style: solid;
+}
+
+.button-phthalo-outline:hover {
+  background-color: var(--phthalo-green);
+  color: var(--milk);
+  transform: scale(1.025);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button-apple-phthalo {
+  background-color: var(--milk);
+  color: var(--phthalo-green);
+  border-color: var(--apple-green-light);
+  border-style: solid;
+}
+
+.button-apple-phthalo:hover {
+  background-color: var(--apple-green-light);
+  /* transform: scale(1.025); */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.features-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+ 
+.features-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 0 20px; 
+}
+ 
+.feature-box {
+  max-width: 250px;
+  border: 2px solid var(--phthalo-green);  
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+ 
+.feature-icon {
+  font-size: 40px;
+  color: var(--phthalo-green);
+  margin-bottom: 10px;
+}
+ 
+.feature-link{
+  text-decoration: none;
+  color:var(--black);
+}
+
+ 
+.discover {
+  padding: 50px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.discover-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.discover .text-content {
+  max-width: 50%;
+}
+
+.discover .text-content h2 {
+  font-size: 4rem;
+  color: var(--phthalo-green);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.discover .text-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.discover .image-content img {
+  max-width: 100%; 
+}
+
+
+/* Shop Section */
+.shop {
+  background: var(--light-gray);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.shop-container p {
+  margin: 0px;
+}
+
+.shop-cards-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-evenly; /* Even spacing between cards */
+  gap: 20px;
+  max-width: 1200px; /* Constrain the container width */
+  margin: 20px; /* Center the grid in the container */
+  padding: 10px; /* Add padding on left and right for better spacing */
+}
+
+.shop-card {
+  width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--milk);
+  border: 2px solid var(--phthalo-green);
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.shop-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px var(--shadow);
+}
+
+.shop-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin: 10px 10px 0;
+  padding: 10px;
+  /* border: 2px solid var(--phthalo-green); 
+  border-radius: 5px; */
+}
+
+.shop-card-content {
+  padding: 10px;
+}
+
+.shop-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--phthalo-green);
+  margin: 0 0 8px;
+}
+
+.shop-card-price {
+  font-size: 16px;
+  color: var(--apple-green);
+  margin: 0 0 12px;
+}
+
+.shop-card-description {
+  font-size: 12px;
+  color: var(--phthalo-green-light);
+  margin-bottom: 10px;
+}
+
+.shop-card-button {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+/* Library Section */
+ 
+.library {
+  padding: 50px;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.library-content{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.library .text-content {
+  max-width: 50%;
+}
+
+.library .text-content h2 {
+  font-size: 4rem;
+  color: var(--phthalo-green);
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.library .text-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.discover .image-content img {
+  max-width: 100%; 
+}
+
+/* Blogs Section */
+
+.blog{
+  align-items: center;
+}
+
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px; 
+}
+
+.blog-container p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.blog-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  width: 375px;
+  background-color: var(--milk);
+  border: 2px solid var(--phthalo-green);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.blog-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px var(--shadow);
+}
+
+.blog-card-content {
+  text-align: left;
+}
+
+.blog-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--phthalo-green);
+  margin: 0 0 5px;
+}
+
+.blog-card-subtitle {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--phthalo-green-light);
+  margin: 0 0 10px;
+}
+
+.blog-card-description {
+  font-size: 14px;
+  color: var(--phthalo-green);
+  margin-bottom: 15px;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limits the text to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-card-button {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 50px 0;
+  text-align: center;
+}
+ 
+
+.testimonials-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.testimonial span {
+  font-weight: bold;
+  color: var(--phthalo-green);
+}
+
+ 
+
+/* Footer */
+.footer {
+  background: var(--phthalo-green);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.link-phthalo-green {
+  color: var(--phthalo-green);
+  padding: 5px 10px;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.link-phthalo-green:hover {
+  transform: scale(1.05);
+}
