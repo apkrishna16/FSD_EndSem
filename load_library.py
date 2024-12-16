@@ -1,14 +1,11 @@
 import pandas as pd
 from shop.models import Plant
 from library.models import PlantLibrary   
-
-# Read the Excel file
+ 
 df = pd.read_excel('library_data.xlsx')
-
-# Iterate through each row in the DataFrame and create PlantLibrary entries
+ 
 for index, row in df.iterrows():
-    try:
-         
+    try:         
         plant = Plant.objects.get(common_name=row['Plant'])   
          
         PlantLibrary.objects.create(

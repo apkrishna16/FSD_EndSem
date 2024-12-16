@@ -67,7 +67,11 @@
             </select>
           </div>
           {% endfor %}
-          <button type="submit" class="button button-phthalo-outline quiz-form-button">Find My Plant</button>
+          <button
+            type="submit"
+            class="button button-phthalo-outline quiz-form-button">
+            Find My Plant
+          </button>
         </form>
       </div>
     </div>
@@ -75,73 +79,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-
-<!-- {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LeafNest - My Account</title>
-     
-    <link
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet" />
- 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700&family=Inter:wght@400;600&display=swap"
-      rel="stylesheet" />   
-    <link rel="stylesheet" href="{% static 'css/styles2.css' %}" />
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand bodoni-moda-logo" href="#">Leafistry</a>
-
-          <button
-            class="menu-btn d-lg-none"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav">
-            <i class="bi bi-list"></i>
-          </button>
-
-          <div
-            class="collapse navbar-collapse justify-content-end"
-            id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Discover</a>
-              </li>
-              <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Library</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container mt-5">
-        <h1>Find Your Perfect Plant!</h1>
-        <form method="POST">
-          {% csrf_token %} {% for question in questions %}
-          <div class="form-group">
-            <label>{{ question.text }}</label>
-            <select name="question_{{ question.id }}" class="form-control">
-              {% for option in question.options.all %}
-              <option value="{{ option.text }}">{{ option.text }}</option>
-              {% endfor %}
-            </select>
-          </div>
-          {% endfor %}
-          <button type="submit" class="btn btn-primary">Find My Plant</button>
-        </form>
-      </div>
-    </main>
-  </body>
-</html> -->

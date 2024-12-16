@@ -83,12 +83,20 @@
             <label for="password2">Confirm Password:</label>
             <input type="password" name="password2" id="password2" required />
           </div>
-
+         <div class="reg-button-group">
           <button
             type="submit"
             class="button button-phthalo-outline auth-form-button">
             Register
           </button>
+        </br>
+          <button
+            type="button"
+            class="button button-phthalo-outline auth-form-button"
+            onclick="location.reload();">
+            Reload
+          </button>
+        </div>
 
           {% if messages %}
           <div class="alert">

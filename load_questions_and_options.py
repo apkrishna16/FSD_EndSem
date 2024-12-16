@@ -47,16 +47,12 @@ plant_questions = [
         'options': ['Low', 'Medium', 'High']
     },
 ]
-
-# Populate the database with questions and options
-for question_data in plant_questions:
-    # Get or create the question
+ 
+for question_data in plant_questions: 
     question, created = Question.objects.get_or_create(text=question_data['text'])
-    
-    # If the question already exists, refresh its options
+ 
     if not created:
-        question.options.all().delete()  # Use `related_name='options'` defined in the model
-    
-    # Add the options for the question
+        question.options.all().delete()    
+        
     for option_text in question_data['options']:
         Option.objects.create(question=question, text=option_text)

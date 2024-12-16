@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Plant
 
 def shop(request):
+    if request.method == 'POST':
+        return redirect('cart')
     plants = Plant.objects.prefetch_related('inventory')
     return render(request, 'shop.html', {'plants': plants})
 

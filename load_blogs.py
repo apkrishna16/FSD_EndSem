@@ -2,7 +2,6 @@ import pandas as pd
 from home.models import User   
 from blogs.models import Blog
 
-# Read the Excel file
 df = pd.read_excel('blog_data.xlsx')
  
 for index, row in df.iterrows():

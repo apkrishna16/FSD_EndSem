@@ -65,35 +65,3 @@ def profile(request):
 def logout_user(request):
     logout(request)
     return redirect('landing_page')
-
-
-
-
-
-
-
-
-
-
- 
-# def login(request):
-#     return render(request, 'login.html')
-
-# def register(request):
-#     return render(request, 'register.html')
-
-# def blog1(request):
-#     return render(request, 'blog1.html')
-
- 
-
-# def product_lavender_pebbles(request):
-#     return render(request, 'product_lavender_pebbles.html')
-
- 
-
-# def quiz(request):
-#     return render(request, 'quiz.html')
-
-# def results(request):
-#     return render(request, 'results.html')

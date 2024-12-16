@@ -9,17 +9,16 @@ from django.contrib.auth.decorators import login_required
 @login_required(login_url='/login')
 def discover(request):
     if request.method == 'POST':
-        # Collect user responses
+         
         user_responses = {}
         for key, value in request.POST.items():
             if key.startswith('question_'):
                 question_id = int(key.split('_')[1])
                 user_responses[question_id] = value
 
-        # Retrieve plant data
+      
         plants = Plant.objects.all()
 
-        # Prepare plant attribute data for similarity calculation
         plant_data = []
         for plant in plants:
             attributes = [
@@ -42,18 +41,15 @@ def discover(request):
             })
 
         df = pd.DataFrame(plant_data)
-
-        # Add user responses as a new row
+ 
         user_input = " ".join(user_responses.values())
         user_row = pd.DataFrame({'id': [None], 'common_name': ['User'], 'attributes': [user_input]})
         df = pd.concat([df, user_row], ignore_index=True)
 
-        # Vectorize attributes and compute cosine similarity
         vectorizer = CountVectorizer()
         vectors = vectorizer.fit_transform(df['attributes'])
         similarity_matrix = cosine_similarity(vectors)
 
-        # Find the most similar plant (excluding the user row itself)
         user_index = len(df) - 1
         similarities = similarity_matrix[user_index][:-1]
         closest_index = similarities.argmax()
@@ -62,6 +58,5 @@ def discover(request):
 
         return render(request, 'quiz_result.html', {'plant': closest_plant})
 
-    # Load questions and options for the quiz
     questions = Question.objects.prefetch_related('options').all()
     return render(request, 'quiz_page.html', {'questions': questions})

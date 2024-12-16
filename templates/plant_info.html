@@ -52,15 +52,17 @@
         </div>
       </div>
     </nav>
-<div class="plant-info-container">
+    <div class="plant-info-container">
+      <h1>{{ plant_info.plant.common_name }}</h1>
+      <h2>{{ plant_info.plant.scientific_name }}</h2>
+      <div class="plant-info-content">
+        <p>{{ plant_info.information|safe }}</p>
+      </div>
+        <a href="{% url 'library' %}" class="link-apple-green"> 
+        Back to Library
+        </a>
+      </div>
     
-        <h1>{{ plant_info.plant.common_name }}</h1>
-        <h2>{{ plant_info.plant.scientific_name }}</h2>
-
-        <p>{{ plant_info.information }}</p>
-        <a href="{% url 'library' %}" class="link-apple-green">Back to Library</a>
-      
-      </div>   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

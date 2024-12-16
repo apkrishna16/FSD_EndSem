@@ -216,7 +216,7 @@ h5 {
 }
 
 .auth-form-button {
-  width: 100%;
+  width: 50%;
   padding: 10px 15px;
   font-size: 1rem;
 }
@@ -423,8 +423,12 @@ h5 {
 }
 
 .plant-info-container {
-  padding: 30px;
+  padding: 20px 80px;
   justify-content: center;
+}
+
+.plant-info-content {
+  text-align: justify;
 }
 
 .library-container {
@@ -588,11 +592,11 @@ h5 {
 }
 
 .blog-detail-container {
-  padding: 25px; 
+  padding: 20px 80px;
 }
 
 .blog-content {
-  padding: 20px;
+  text-align: justify;
 }
 
 .profile-container {
@@ -663,4 +667,10 @@ h5 {
   right: 5%;
   color: var(--apple-green);
   font-size: 24px;
+}
+
+.reg-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
